@@ -15,8 +15,8 @@ For more information, please consult https://github.com/touala/rce_tools
     dnf install -y python3-devel
     dnf install -y bzip2-devel
     dnf install -y cmake
-    dnf install -y https://extras.getpagespeed.com/release-latest.rpm
-    dnf install -y protobuf-devel
+    # dnf install -y https://extras.getpagespeed.com/release-latest.rpm
+    dnf install -y protobuf
     # dnf install -y zlib-devel
     # dnf install -y git-all
 
