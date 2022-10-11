@@ -14,6 +14,7 @@ For more information, please consult https://github.com/touala/rce_tools
     dnf group install -y "Development Tools"
     dnf install -y python3-devel
     dnf install -y bzip2-devel
+    dnf install -y cmake
     # dnf install -y zlib-devel
     # dnf install -y git-all
 
