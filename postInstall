@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -ex
+
+main_name="rce_tools"
+
+# Setup alias and environment variables
+mkdir -p /home/$main_name # Will become HOME and WORKDIR
+touch /home/$main_name/.bashrc
+{
+    echo 'alias ls="ls --color=auto"'
+    echo 'alias ll="ls -hla"'
+    echo "main_name=$main_name"
+    echo 'export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]$main_name:\[\033[33;1m\]\w\[\033[m\]$ "' # Prettify prompt
+} >> /home/$main_name/.bashrc
+
+pip3 install --user megalodon==2.3.5
+pip3 install --user ont_pyguppy_client_lib==5.0.7
+pip3 install --user pyguppyclient
+
