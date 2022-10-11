@@ -7,6 +7,9 @@ For more information, please consult https://github.com/touala/rce_tools
 # Install dependencies
 %post
     # Install basic dependencies
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
     dnf upgrade -y
     dnf group install -y "Development Tools"
     dnf install -y python3-devel
