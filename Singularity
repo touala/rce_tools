@@ -4,10 +4,6 @@ From: centos:centos8
 %help
 For more information, please consult https://github.com/touala/rce_tools
 
-# Add files to the container
-%setup
-    cp postInstall /tmp/postInstall
-
 # Install dependencies
 %post
     # Install basic dependencies
@@ -15,14 +11,14 @@ For more information, please consult https://github.com/touala/rce_tools
     dnf group install -y "Development Tools"
     dnf install -y python3-devel
     dnf install -y zlib-devel
+    dnf install -y git-all
+
+    git clone https://github.com/touala/rce_tools
+    bash rce_tools/postInstall
 
     # Define working directory
     mkdir /home/rce_tools
     cd /home/rce_tools
-
-    # Install remaining dependencies
-    mv /tmp/postInstall /postInstall
-    bash /postInstall
 
     # Set default behavior
     cat > /.singularity.d/env/99-custom.sh <<EOF
