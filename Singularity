@@ -20,7 +20,7 @@ For more information, please consult https://github.com/touala/rce_tools
     # git clone https://github.com/touala/rce_tools
     # bash rce_tools/postInstall
     pip3 install megalodon==2.5.0
-    pip3 install ont_pyguppy_client_lib==6.3.8
+    # pip3 install ont_pyguppy_client_lib==6.3.8
 
     # Define working directory
     mkdir /home/rce_tools
