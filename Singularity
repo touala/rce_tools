@@ -10,11 +10,13 @@ For more information, please consult https://github.com/touala/rce_tools
     dnf upgrade -y
     dnf group install -y "Development Tools"
     dnf install -y python3-devel
-    dnf install -y zlib-devel
-    dnf install -y git-all
+    # dnf install -y zlib-devel
+    # dnf install -y git-all
 
-    git clone https://github.com/touala/rce_tools
-    bash rce_tools/postInstall
+    # git clone https://github.com/touala/rce_tools
+    # bash rce_tools/postInstall
+    pip3 install megalodon==2.5.0
+    pip3 install ont_pyguppy_client_lib==6.3.8
 
     # Define working directory
     mkdir /home/rce_tools
